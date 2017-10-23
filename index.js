@@ -9,7 +9,10 @@ require("./services/passport.js");
 const app = express(); 
 
 mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI); 
+mongoose
+	.connect(keys.mongoURI)
+	.then(() => console.log("connected to mongoDB"))
+	.catch((err) => console.log(err)); 
 
 
 
@@ -29,8 +32,13 @@ require("./routes/authRoutes")(app);
 
 //app goes lives and listens at the environment port
 const PORT = process.env.PORT || 5000; 
-app.listen(PORT, () =>{
-	console.log(`The app is listenting on ${PORT}`)
+
+app.listen(PORT, (err) =>{
+	if(!err){
+		console.log(`The app is listenting on ${PORT}`); 
+	} else{
+		console.log(err); 
+	}
 }); 
 
 
