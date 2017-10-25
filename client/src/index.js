@@ -25,3 +25,15 @@ ReactDOM.render(
 		<App/>
 	</Provider>, 
 	document.querySelector("#root")); 
+
+
+// store is the Redux store object and we are changing the definition 
+//of its by default meaning. 
+// let next = store.display 
+// store.dispatch = function dispatchAndLog(action){
+// 	console.log("dispatching", action); 
+// 	let result = next(action); 
+// 	console.log("next state", store.getState())
+// 	return result; 
+// }
+
