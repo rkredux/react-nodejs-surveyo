@@ -26,7 +26,7 @@ ReactDOM.render(
 	</Provider>, 
 	document.querySelector("#root")); 
 
-
+ 
 // store is the Redux store object and we are changing the definition 
 //of its by default meaning. 
 // let next = store.display 
