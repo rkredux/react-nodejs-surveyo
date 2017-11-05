@@ -10,9 +10,14 @@ const app = express();
 
 mongoose.Promise = global.Promise;
 mongoose
-	.connect(keys.mongoURI)
-	.then(() => console.log("connected to mongoDB"))
-	.catch((err) => console.log(err)); 
+	.connect(keys.mongoURI) 
+	.then(() => console.log("The application is connected to the MongoDB"))
+	.catch((err) => console.log("error in connecting to the MongoDB Database")); 
+
+
+
+	// .then(() => console.log("connected to mongoDB"))
+	// .catch((err) => console.log(err)); 
 
 
 
